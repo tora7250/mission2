@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>mission_2-2</title>
+
+</head>
+ 
+ 
+ <body>
+   
+    <form action="" method="post">
+      
+      
+      <input type="text" name="tex" value="コメント">
+      
+     
+      <input type="submit" name="submit">
+    
+    
+    </form>
+    
+    
+    <?php
+      
+      
+       $str = $_POST["tex"];
+       
+       
+       $fileName = "mission_2-2.txt";
+       
+       
+       if (!empty($str)) {
+            
+            
+            $fp = fopen($fileName, "w");
+           
+           
+            fwrite($fp, $str.PHP_EOL);
+            
+            
+            fclose($fp);
+            
+            
+            echo $str . "を受け付けました<br>";
+         }
+        
+        if ($str == "完成！") {
+             
+             echo "おめでとう！";
+        }
+        
+     ?>
+ </body>
+
+ </html>
